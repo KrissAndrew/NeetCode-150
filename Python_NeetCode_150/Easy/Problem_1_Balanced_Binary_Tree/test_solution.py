@@ -13,15 +13,12 @@ class TestTreeBalance(unittest.TestCase):
 
             # Creating tree nodes from the sample data
             self.root_1 = create_tree_from_list(self.tree_data_1)
-            print('\n')
             self.root_2 = create_tree_from_list(self.tree_data_2)
-            print('\n')
             self.root_3 = create_tree_from_list(self.tree_data_3)
-            print('\n')            
             self.root_4 = create_tree_from_list(self.tree_data_4)
 
         def test_tree_is_balanced(self):
-            print("Running test for tree balance")  # Debugging to check if the test function is running
+            print("Running tests for tree balance")  # Debugging to check if the test function is running
 
             # Test case 1 - Balanced Tree
             self.assertTrue(tree_is_balanced_recursive(self.root_1))
