@@ -1,28 +1,33 @@
 trigger:
-- main  # Adjust the branch name as needed
+- main
 
 pool:
-  vmImage: 'ubuntu-latest'  # Use 'windows-latest' if working on Windows
+  vmImage: 'ubuntu-latest'
 
 steps:
 # Step 1: Install Python
 - task: UsePythonVersion@0
   inputs:
-    versionSpec: '3.x'  # Use the desired Python version
+    versionSpec: '3.x'
     addToPath: true
 
-# Step 2: Install dependencies (if you have a requirements.txt)
+# Step 2: Install dependencies
 - script: |
     python -m pip install --upgrade pip
     pip install -r requirements.txt
   displayName: 'Install Python Dependencies'
 
-# Step 3: Run Tests
+# Step 3: Debug Directory Structure (Optional)
+- script: |
+    ls -R Python_NeetCode_150
+  displayName: 'List Files in Python_NeetCode_150'
+
+# Step 4: Run Tests
 - script: |
     python -m unittest discover -s Python_NeetCode_150 -p "test_*.py"
   displayName: 'Run Unit Tests'
 
-# Step 4: Publish Test Results (optional)
+# Step 5: Publish Test Results (Optional)
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
