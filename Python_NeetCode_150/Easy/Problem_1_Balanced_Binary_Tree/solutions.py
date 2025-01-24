@@ -1,12 +1,12 @@
 import sys
 import os
 
-# Add the directory containing Python_NeetCode_150 to sys.path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'Common')))
+# Print for debugging
+print(f"Current working directory: {os.getcwd()}")
+print(f"Current sys.path: {sys.path}")
 
-# Diagnostic print statements
-print(f"\nCurrent working directory: {os.getcwd()}")
-print(f"Current sys.path: {sys.path}\n")
+# Add the project root directory (Python_NeetCode_150) to the sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'Python_NeetCode_150')))
 
 from Common.binary_tree import *
 from typing import Optional
