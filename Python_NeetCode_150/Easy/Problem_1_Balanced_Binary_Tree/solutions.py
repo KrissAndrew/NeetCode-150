@@ -1,14 +1,15 @@
 import sys
 import os
 
-# Explicitly add the parent directory to sys.path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+# Add the directory containing Python_NeetCode_150 to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'Common')))
 
 # Diagnostic print statements
 print(f"Current working directory: {os.getcwd()}")
 print(f"Current sys.path: {sys.path}")
 
-from Python_NeetCode_150.Common.binary_tree import *
+import unittest
+from binary_tree import *
 from typing import Optional
 
 def tree_is_balanced_recursive(root: Optional[TreeNode]) -> bool:
