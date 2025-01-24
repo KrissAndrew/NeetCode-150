@@ -5,10 +5,9 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'Common')))
 
 # Diagnostic print statements
-print(f"Current working directory: {os.getcwd()}")
-print(f"Current sys.path: {sys.path}")
+print(f"\nCurrent working directory: {os.getcwd()}")
+print(f"Current sys.path: {sys.path}\n")
 
-import unittest
 from binary_tree import *
 from typing import Optional
 
