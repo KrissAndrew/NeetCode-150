@@ -36,9 +36,14 @@ steps:
     PYTHONPATH=. python -m unittest discover Python_NeetCode_150 -p "test_*.py"
   displayName: 'Run Unit Tests'
 
+- script: |
+    pip install unittest-xml-reporting
+    python test_runner.py
+  displayName: 'Run Unit Tests with XML Output'
+
 # Step 5: Publish Test Results (Optional)
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: '**/test-results.xml'
+    testResultsFiles: '**/test-results/TEST-*.xml'
     failTaskOnFailedTests: true
