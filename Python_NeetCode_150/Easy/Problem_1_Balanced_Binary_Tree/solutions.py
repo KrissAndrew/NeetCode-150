@@ -1,6 +1,10 @@
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
+
+# Explicitly add the parent directory to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
+# Diagnostic print statements
 print(f"Current working directory: {os.getcwd()}")
 print(f"Current sys.path: {sys.path}")
 
