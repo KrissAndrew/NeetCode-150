@@ -1,4 +1,4 @@
-from Python_NeetCode_150.Common.Binary_Tree import *
+from Python_NeetCode_150.Common.binary_Tree import *
 from typing import Optional
 
 def tree_is_balanced_recursive(root: Optional[TreeNode]) -> bool:

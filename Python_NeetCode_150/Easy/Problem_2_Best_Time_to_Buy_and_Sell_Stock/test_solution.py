@@ -1,5 +1,5 @@
 import unittest
-from Python_NeetCode_150.Easy.Problem_2_Best_Time_to_Buy_and_Sell_Stock.Solution import *
+from Python_NeetCode_150.Easy.Problem_2_Best_Time_to_Buy_and_Sell_Stock.solutions import maxProfit
 
 class TestStockPurchase(unittest.TestCase):
         
@@ -29,4 +29,4 @@ class TestStockPurchase(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main(verbosity=2)
+    unittest.main()

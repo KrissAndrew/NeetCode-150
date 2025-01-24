@@ -1,0 +1,10 @@
+# Ignore Python bytecode
+__pycache__/
+*.pyc
+
+# Ignore virtual environments (if you're using one)
+venv/
+
+# Ignore IDE files (if using VSCode, PyCharm, etc.)
+.vscode/
+.idea/
