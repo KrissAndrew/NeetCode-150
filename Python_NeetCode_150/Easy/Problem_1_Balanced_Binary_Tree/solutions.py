@@ -1,5 +1,6 @@
 import sys
 import os
+from typing import Optional
 
 # Print for debugging
 print(f"Current working directory: {os.getcwd()}")
@@ -8,8 +9,7 @@ print(f"Current sys.path: {sys.path}")
 # Add the project root directory (Python_NeetCode_150) to the sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'Python_NeetCode_150')))
 
-from Common.binary_tree import *
-from typing import Optional
+from Python_NeetCode_150.Common.binary_tree import *
 
 def tree_is_balanced_recursive(root: Optional[TreeNode]) -> bool:
     def height(node):
