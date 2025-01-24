@@ -8,7 +8,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.
 print(f"\nCurrent working directory: {os.getcwd()}")
 print(f"Current sys.path: {sys.path}\n")
 
-from binary_tree import *
+from Common.binary_tree import *
 from typing import Optional
 
 def tree_is_balanced_recursive(root: Optional[TreeNode]) -> bool:

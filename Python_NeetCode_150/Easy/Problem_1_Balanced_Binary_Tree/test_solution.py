@@ -9,7 +9,7 @@ print(f"Current working directory: {os.getcwd()}")
 print(f"Current sys.path: {sys.path}")
 
 import unittest
-from binary_tree import create_tree_from_list
+from Common.binary_tree import create_tree_from_list  # Adjusted import
 from Python_NeetCode_150.Easy.Problem_1_Balanced_Binary_Tree.solutions import tree_is_balanced_recursive, tree_is_balanced_iterative
 
 class TestTreeBalance(unittest.TestCase):
