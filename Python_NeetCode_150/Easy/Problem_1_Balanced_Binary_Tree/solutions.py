@@ -1,4 +1,8 @@
-from Python_NeetCode_150.Common.binary_Tree import *
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
+from Python_NeetCode_150.Common.binary_tree import *
 from typing import Optional
 
 def tree_is_balanced_recursive(root: Optional[TreeNode]) -> bool:

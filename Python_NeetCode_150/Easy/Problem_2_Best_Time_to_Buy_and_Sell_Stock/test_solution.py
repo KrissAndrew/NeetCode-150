@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
 import unittest
 from Python_NeetCode_150.Easy.Problem_2_Best_Time_to_Buy_and_Sell_Stock.solutions import maxProfit
 
