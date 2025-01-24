@@ -33,6 +33,7 @@ steps:
 # "test_solution.py" files are located within individual problem folders under Python_NeetCode_150/Easy
 # The unittest discovery command looks for test files recursively within the Python_NeetCode_150 root folder
 - script: |
+    export PYTHONPATH=$PYTHONPATH:/home/vsts/work/1/s/Python_NeetCode_150
     python -m unittest discover -s Python_NeetCode_150 -p "test_*.py"
   displayName: 'Run Unit Tests'
 
