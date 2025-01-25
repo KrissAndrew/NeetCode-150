@@ -3,7 +3,7 @@ from .solutions import *
 
 class TestContainsDulicate(unittest.TestCase):
         
-        def test_tree_is_balanced(self):
+        def test_contains_duplicate(self):
             print("\nRunning tests for 'Contains Duplicate'")
 
             # Test case 1
