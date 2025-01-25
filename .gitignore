@@ -8,3 +8,6 @@ venv/
 # Ignore IDE files (if using VSCode, PyCharm, etc.)
 .vscode/
 .idea/
+
+# Ignore test outputs
+test-results/
