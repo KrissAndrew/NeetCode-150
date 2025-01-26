@@ -1,5 +1,5 @@
 # Use array and ord to access each item counting letter occurances O(n)
-# ord(letter): returns the Unicode code point for the character letter.
+# ord(letter): returns the Unicode code representation of a character.
 # Example: ord('a') will return 97.
 # Subtracting ord(a) from a lowercase letter gives the alphabetical index for that letter
 # ord('a') - ord('a') = 97 - 97 = 0 → index 0 for 'a'
@@ -11,10 +11,10 @@ def valid_anagram(string_one: str, string_two: str) -> bool:
 
     counter = [0] * 26
     
-    for letter in string_one.lower():
-        counter[ord(letter) - ord('a')] += 1
-    for letter in string_two.lower():
-        counter[ord(letter) - ord('a')] -= 1
+    for char in string_one.lower():
+        counter[ord(char) - ord('a')] += 1
+    for char in string_two.lower():
+        counter[ord(char) - ord('a')] -= 1
 
     for val in counter:
         if val != 0: return False
