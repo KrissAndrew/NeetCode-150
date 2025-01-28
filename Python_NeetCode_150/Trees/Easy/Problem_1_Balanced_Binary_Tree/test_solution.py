@@ -5,7 +5,7 @@ from .solutions import tree_is_balanced_recursive, tree_is_balanced_iterative
 class TestTreeBalance(unittest.TestCase):
         
         def test_tree_is_balanced(self):
-            print("\nRunning tests for 'tree is balanced'")
+            print("\nRunning tests for 'Tree is Balanced'")
 
             # Test case 1 - Balanced Tree
             self.tree_data_1 = [1, 2, 3, None, None, 4, 5]
