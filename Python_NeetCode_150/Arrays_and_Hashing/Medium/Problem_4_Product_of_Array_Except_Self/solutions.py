@@ -42,8 +42,3 @@ def product_except_self(nums: List[int]) -> List[int]:
         suffix *= nums[i]
 
     return result
-
-if __name__ == "__main__":
-    Input = [1,2,4,6]
-    Output = [48,24,12,8]
-    print(f"Expected: {Output} | Result: {product_except_self(Input)}")

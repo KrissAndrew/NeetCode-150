@@ -46,12 +46,3 @@ def decode_binary(encoded: str) -> List[str]:
         string_array.append(encoded[i:i + length].decode('utf-8'))
         i += length
     return string_array
-
-if __name__ == "__main__":
-    Output = [""]
-
-    encoded = encode_strings([""])
-    print(encoded)
-    decoded = decode_strings(encoded)
-    print(decoded)
-    print("Result is good" if decoded == Output else "Result is bad")
