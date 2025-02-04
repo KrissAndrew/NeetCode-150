@@ -7,6 +7,7 @@ class TestEncodeDecodeStrings(unittest.TestCase):
             ([[""], '#0#']),
             (["Two", "Words"], '#3#Two#5#Words'),
             (["2", "Words"], '#1#2#5#Words'),
+            (["#1#", "#1#", "#1#", "#1#", "#1#"], '#3##1##3##1##3##1##3##1##3##1#'),
         ]
         
         def test_encode_decode_strings(self):
