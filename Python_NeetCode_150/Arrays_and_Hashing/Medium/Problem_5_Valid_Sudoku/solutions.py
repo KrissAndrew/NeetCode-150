@@ -66,3 +66,4 @@ def valid_sudoku(board: List[List[str]]) -> bool:
                 return False
 
     return True
+

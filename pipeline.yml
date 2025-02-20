@@ -1,8 +1,8 @@
 trigger:
-- main
+- main # Will trigger the pipeline when changes are pushed to main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'ubuntu-latest' # The pipeline will run on an azure-hosted agent using the latest ubuntu image
 
 steps:
 # Step 1: Install Python
@@ -23,18 +23,18 @@ steps:
   displayName: "Print Working Directory and File Structure"
 
 # Step 3: Debug Directory Structure (Optional)
-# Before running the tests, ensure the pipeline recognizes your file structure correctly.
+# Before running the tests, ensure the pipeline recognizes the file structure correctly.
 # Add a command to list files in the Python_NeetCode_150 directory:
 - script: |
     ls -R Python_NeetCode_150
   displayName: 'List Files in Python_NeetCode_150'
 
 # Step 4: Run Tests
-# "test_solution.py" files are located within individual problem folders under Python_NeetCode_150/Easy
+# "test_solution.py" files are located within individual problem folders under Python_NeetCode_150/<Test Category>/<Test Difficulty>/
 # The unittest discovery command looks for test files recursively within the Python_NeetCode_150 root folder
-- script: |
-    PYTHONPATH=. python -m unittest discover Python_NeetCode_150 -p "test_*.py"
-  displayName: 'Run Unit Tests'
+# - script: |
+#     PYTHONPATH=. python -m unittest discover Python_NeetCode_150 -p "test_*.py"
+#   displayName: 'Run Unit Tests'
 
 - script: |
     pip install unittest-xml-reporting
