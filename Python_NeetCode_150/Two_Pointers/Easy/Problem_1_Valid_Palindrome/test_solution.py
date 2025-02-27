@@ -23,7 +23,7 @@ class TestValidAnagram(unittest.TestCase):
 
             # Non-palindromes:
             ("hello", False),
-            ("123456", False),~~
+            ("123456", False),
             ("Not a palindrome!", False)
         ]
         
