@@ -32,18 +32,18 @@ steps:
 # Step 4: Run Tests
 # "test_solution.py" files are located within individual problem folders under Python_NeetCode_150/<Test Category>/<Test Difficulty>/
 # The unittest discovery command looks for test files recursively within the Python_NeetCode_150 root folder
-# - script: |
-#     PYTHONPATH=. python -m unittest discover Python_NeetCode_150 -p "test_*.py"
-#   displayName: 'Run Unit Tests'
-
 - script: |
-    pip install unittest-xml-reporting
-    python test_runner.py
-  displayName: 'Run Unit Tests with XML Output'
+    PYTHONPATH=. python -m unittest discover Python_NeetCode_150 -p "test_*.py"
+  displayName: 'Run Unit Tests'
 
-# Step 5: Publish Test Results (Optional)
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'JUnit'
-    testResultsFiles: '**/test-results/TEST-*.xml'
-    failTaskOnFailedTests: true
+# - script: |
+#     pip install unittest-xml-reporting
+#     python test_runner.py
+#   displayName: 'Run Unit Tests with XML Output'
+
+# # Step 5: Publish Test Results (Optional)
+# - task: PublishTestResults@2
+#   inputs:
+#     testResultsFormat: 'JUnit'
+#     testResultsFiles: '**/test-results/TEST-*.xml'
+#     failTaskOnFailedTests: true
