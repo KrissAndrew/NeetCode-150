@@ -6,10 +6,10 @@ class TestTreeBalance(unittest.TestCase):
     
     # Each tuple: (tree_data as a list, expected balanced result)
     test_cases = [
-        ([1, 2, 3, None, None, 4, 5], True),      # Balanced tree
-        ([1, 2, 3, None, None, 4, None, 5], False), # Unbalanced tree
-        ([1, 2, None], True),                      # Balanced tree (only left child)
-        ([], True),                                # Empty tree is balanced
+        ([1, 2, 3, None, None, 4, 5], True),        # 1 - Balanced tree
+        ([1, 2, 3, None, None, 4, None, 5], False), # 2 - Unbalanced tree
+        ([1, 2, None], True),                       # 3 - Balanced tree (only left child)
+        ([], True),                                 # 4 - Empty tree is balanced
     ]
         
     def test_tree_is_balanced(self):
