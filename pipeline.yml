@@ -17,14 +17,7 @@ steps:
     pip install -r requirements.txt
   displayName: 'Install Python Dependencies'
 
-# Step 3: Debug Directory Structure (Optional)
-# Before running the tests, ensure the pipeline recognizes the file structure correctly.
-# Add a command to list files in the Python_NeetCode_150 directory:
-- script: |
-    ls -R Python_NeetCode_150
-  displayName: 'List Files in Python_NeetCode_150'
-
-# Step 4: Run Tests
+# Step 3: Run Tests
 # "test_solution.py" files are located within individual problem folders under Python_NeetCode_150/<Test Category>/<Test Difficulty>/
 # The unittest discovery command looks for test files recursively within the Python_NeetCode_150 root folder
 - script: |
