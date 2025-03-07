@@ -2,6 +2,25 @@
 # You may choose any two bars to form a container. Return the maximum amount of water a container can store.
 
 def max_container(heights: list[int]) -> int:
+    """
+    Summary:
+        Processes the list of integers representing heights to determine the maximum
+        spaces between two of the integers representing a container.
+
+    Parameters:
+        numbers (list[int]): A list of integers.
+
+    Returns:
+        int: Max number of heights possible between provided heights 
+
+    Example:
+        >>> result = max_container([1, 7, 2, 5, 4, 7, 3, 6])
+        >>> print(result)
+        36
+        >>> result = max_container([2, 2, 2])
+        >>> print(result)
+        4
+    """
     if not heights:
         return 0
     

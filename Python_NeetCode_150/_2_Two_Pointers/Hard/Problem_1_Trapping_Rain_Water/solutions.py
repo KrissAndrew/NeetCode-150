@@ -1,7 +1,7 @@
 # Given an integer array heights where heights[i] represents the height of the ith bar.
-# You may choose any two bars to form a container. Return the maximum amount of water a container can store.
+# Return the maximum amount of water that can be contained between the heights.
 
-def max_container(heights: list[int]) -> int:
+def trapping_rain_water(heights: list[int]) -> int:
     if not heights:
         return 0
     
@@ -20,3 +20,8 @@ def max_container(heights: list[int]) -> int:
             right -= 1
             
     return max_volume
+
+if __name__ == "__main__":
+        heights = [0,2,0,3,1,0,1,3,2,1]
+        result = trapping_rain_water(heights)
+        print(result)
