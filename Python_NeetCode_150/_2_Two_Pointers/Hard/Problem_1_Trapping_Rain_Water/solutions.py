@@ -2,26 +2,35 @@
 # Return the maximum amount of water that can be contained between the heights.
 
 def trapping_rain_water(heights: list[int]) -> int:
-    if not heights:
+    if not heights or len(heights) < 3: # Sizes below 3 cannot hold water beween
         return 0
-    
-    max_volume = 0
-    
-    # sum of water = height of lower edge (lh) * distance between edges (d)
-    left, right = 0, len(heights) - 1
-    while left < right:
-        left_height, right_height = heights[left], heights[right]
-        current_volume = min(left_height, right_height) * (right - left)
-        max_volume = max(current_volume, max_volume)
 
-        if left_height <= right_height:
-            left += 1
-        else:
-            right -= 1
-            
-    return max_volume
+    trapped = 0
+    counter = 0
+    left, right = 1, 2
+
+
+
+    while left != len(heights) and right < len(heights):
+        left_height, right_height = heights[left], heights[right] 
+        while right_height < left_height:
+             right += 1
+             right_height = heights[right]
+        if left == right: right += 1
+        while left != right and right < len(heights):
+             prev_peak = left_height
+             left += 1
+             left_height = heights[left]
+             trapped += prev_peak - left_height
+             
+    return trapped
 
 if __name__ == "__main__":
         heights = [0,2,0,3,1,0,1,3,2,1]
+        # answer is 9
         result = trapping_rain_water(heights)
         print(result)
+
+        heights = [0,1,0,1,0]
+
+
