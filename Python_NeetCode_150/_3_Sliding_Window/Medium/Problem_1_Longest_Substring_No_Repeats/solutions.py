@@ -3,48 +3,41 @@
 # A substring is a contiguous sequence of characters within a string.
 
 def longest_non_repeat_substring(s: str) -> int:
-    if len(s) == 0:
+    length = len(s)
+    if length == 0:
         return 0
-    if len(set(s)) == 1:
-        return 1
-    elif len(s) == 2:
-        return 2
-     
-    s = list(s)
-    seen = set()
-    p1, p2 = 0, 1
-    longest = 1
-       
-    
-    while p2 < len(s) - 1:
-        if s[p1] == s[p2]: # Only start counting numbers following duplicates
-            p1 += 1
-            p2 += 1
-        seen.add(s[p1])
-        while s[p2] not in seen and p2 < len(s) - 1:
-            seen.add(s[p2])
-            p2 += 1
-            longest = max(p2 - p1, longest)
-        p1 = p2
-        p2 += 1
-        seen = set()
 
+    seen = {}
+    longest = 0
+    start = 0
+
+    for i, char in enumerate(s):
+        if char in seen and seen[char] >= start:
+            # Update longest before shifting start if needed
+            longest = max(longest, i - start)
+            start = seen[char] + 1
+        seen[char] = i
+    # Check for the last window
+    longest = max(longest, length - start)
     return longest
          
-     
-
-
 
 if __name__ == "__main__":
     test_cases = [
-        ("abcabcbb", 3),          # max profit is 6 - 1 = 5
-        ("zxyzxyz", 3),       # max profit is 7 - 3 = 4
-        ("xxxx", 1),          # max profit is 6 - 1 = 5
-        ("aabbcc", 2),       # max profit is 6 - 1 = 5
+        ("abcabcbb", 3), #  1
+        ("zxyzxyz", 3),  #  2
+        ("xxxx", 1),     #  3
+        ("aabbcc", 2),   #  4
+        ("abcabcbb", 3), #  5
+        ("au", 2),       #  6
+        ("aab", 2),      #  7
     ]
 
-
+    all_passed = True
     for idx, (string, expected) in enumerate(test_cases, start=1):
             result = longest_non_repeat_substring(string)
             if result != expected:
+                all_passed = False
                 print(result, expected, f"Test case {idx}: string={string}, expected={expected}, result {result}")
+    if all_passed:
+        print("No failures detected.")
