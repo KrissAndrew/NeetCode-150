@@ -12,7 +12,7 @@ class TestStockPurchase(unittest.TestCase):
         ("au", 2),       #  6
         ("aab", 2),      #  7
     ]
-        
+
     def test_longest_non_repeat_substring(self):
         print("\nRunning tests for 'Best Time to Buy and Sell Stock'")
         for idx, (input, expected) in enumerate(self.test_cases, start=1):
