@@ -20,6 +20,7 @@ if __name__ == "__main__":
         (("XYYX", 2), 4),    #  1 - Can replace two for "XXXX" = len 4
         (("XYYX", 1), 3),    #  1 - Can replace one for "X(YYY)"|"(YYY)X" = len 3
         (("AAABABB", 1), 5), #  2 - Can replace one for "(AAAAA)BB" = len 5
+        (("AAABABB", 2), 6), #  2 - Can replace Two for "(AAAAAA)B" = len 5 
     ]
 
     all_passed = True
