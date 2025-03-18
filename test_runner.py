@@ -1,7 +1,7 @@
 import unittest
 
 def run_tests():
-    runner = unittest.TextTestRunner(verbosity=2)  # Use TextTestRunner for console output
+    runner = unittest.TextTestRunner(verbosity=1)  # Use TextTestRunner for console output
     tests = unittest.TestLoader().discover('Python_NeetCode_150', pattern='test_*.py')
     result = runner.run(tests)
     return result.wasSuccessful()
