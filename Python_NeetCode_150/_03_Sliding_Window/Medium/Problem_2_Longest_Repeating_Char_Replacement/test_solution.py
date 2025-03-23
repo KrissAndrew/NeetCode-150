@@ -1,7 +1,7 @@
 import unittest
 from .solutions import longest_repeating_char_replacement
 
-class TestStockPurchase(unittest.TestCase):
+class TestLongestRepeatCharReplacement(unittest.TestCase):
 
     test_cases = [
         (("ABC", 1), 2),     #  1 - Can replace one for "(AA)C"|"A(BB)"|"A(CC)" = len 3
