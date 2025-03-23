@@ -1,7 +1,7 @@
 import unittest
 from .solutions import longest_non_repeat_substring
 
-class TestStockPurchase(unittest.TestCase):
+class TestNonRepeatSub(unittest.TestCase):
 
     test_cases = [
         ("abcabcbb", 3), #  1
