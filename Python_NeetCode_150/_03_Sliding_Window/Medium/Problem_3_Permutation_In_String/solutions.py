@@ -3,29 +3,31 @@
 from collections import Counter
 
 def permutation_in_string(s1: str, s2: str) -> bool:
+
+    if len(s1) > len(s2): # Early exit if s1 is longer than s2
+        return False
+    
     char_set = set(s1)
-    s2_list = list(s2)
     left, right = 0, len(s1) - 1
+    counts = Counter(s1)
     
-    counts = Counter(s1) # Initialise a count var if relevant char detected
-    
-    for i in range(len(s2_list[left:right + 1])):
-        if s2_list[i] in char_set:
-            counts[s2_list[i]] -= 1 
+    for i in range(left, right + 1): # Process the initial window
+        if s2[i] in char_set:
+            counts[s2[i]] -= 1
 
     while right < len(s2) - 1:
 
         if all(value == 0 for value in counts.values()):
             return True
         
-        if s2_list[left] in char_set: # Add back in lost char
-            counts[s2_list[left]] += 1
+        if s2[left] in char_set: # Add lost char to window count
+            counts[s2[left]] += 1
 
         left += 1
         right += 1
 
-        if s2_list[right] in char_set:
-            counts[s2_list[right]] -= 1
+        if s2[right] in char_set: # Remove incoming char from window count
+            counts[s2[right]] -= 1
 
     return all(value == 0 for value in counts.values())
 
