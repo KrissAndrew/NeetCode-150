@@ -1,3 +1,6 @@
+# Anagram - jumbled strings with the same number of characters ANAGRAM - NAGARAM
+# Frequencies matter, but order does not.
+
 # Use array and ord to access each item counting letter occurances O(n)
 # ord(letter): returns the Unicode code representation of a character.
 # Example: ord('a') will return 97.
